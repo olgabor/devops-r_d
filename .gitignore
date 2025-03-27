@@ -1,0 +1,19 @@
+# Vagrant-related files
+.vagrant/
+
+# Log files
+vagrant.log
+
+# VirtualBox and Parallels machine-specific files
+*.vbox
+*.vbox-prev
+
+# Temporary files
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Sensitive information (if applicable)
+.env
+secrets.yml
