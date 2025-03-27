@@ -16,4 +16,5 @@ Thumbs.db
 
 # Sensitive information (if applicable)
 .env
+
 secrets.yml
