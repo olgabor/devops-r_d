@@ -93,9 +93,11 @@ sudo systemctl status log_time.service
 
 sudo nano /usr/local/bin/log_time.sh
 sudo systemctl status log_time.timer
+
 ![Screenshot Placeholder](./lecture_6/images/start_timer.png)
  
 sudo systemctl stop log_time.timer
+
 ![Screenshot Placeholder](./lecture_6/images/stop_timer.png)
 
 # Setup firewall
@@ -130,6 +132,7 @@ maxretry = 3
 
 sudo systemctl restart fail2ban
 sudo fail2ban-client status sshd
+
 ![Screenshot Placeholder](./lecture_6/images/fairban.png)
 
 
@@ -137,6 +140,7 @@ sudo fail2ban-client status sshd
 
 ## Check disks 
 lsblk
+
 ![Screenshot Placeholder](./lecture_6/images/disks.png)
 
 ## Add new disk to vm machine 
@@ -147,6 +151,7 @@ lsblk
 sudo fdisk /dev/vda
 n -> new space 
 p -> primary 
+
 ![Screenshot Placeholder](./lecture_6/partition_disk.png)
 
 ## Format the disk
@@ -162,8 +167,9 @@ sudo blkid /dev/vda1
 /dev/vda1: UUID="3551257c-7dca-4e9c-ae6f-a68e6c21e606" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="5501707d-01"
 
 sudo nano /etc/fstab
+
 ![Screenshot Placeholder](./lecture_6/images/add_fstab.png)
 
 sudo mount -a
 
-![Screenshot Placeholder](./llecture_6/images/show_new_disk_mounted.png)
+![Screenshot Placeholder](./lecture_6/images/show_new_disk_mounted.png)
