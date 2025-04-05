@@ -7,22 +7,26 @@
 ### Install nginx web server 
 sudo apt update
 sudo apt install -y nginx
-![Screenshot Placeholder](./lecture_6/images/install_nginx.png)
+
+![Screenshot Placeholder](./images/install_nginx.png)
 
 ###  Verify nginx web server installed 
 sudo systemctl enable --now nginx
-![Screenshot Placeholder](./lecture_6/images/check_nginx_installed.png)
+
+![Screenshot Placeholder](./images/check_nginx_installed.png)
 
 ### Install PPA repository
 sudo add-apt-repository -y ppa:nginx/stable
 sudo apt update
 sudo apt upgrade -y
-![Screenshot Placeholder](./lecture_6/images/add_ppa_repository.png)
+
+![Screenshot Placeholder](./images/add_ppa_repository.png)
 
 
 ### Check version 
 nginx -v
-![Screenshot Placeholder](./lecture_6/images/nginx_update.png)
+
+![Screenshot Placeholder](./images/nginx_update.png)
 
 ### Delete ppa:repository 
 sudo apt install ppa-purge
@@ -94,11 +98,11 @@ sudo systemctl status log_time.service
 sudo nano /usr/local/bin/log_time.sh
 sudo systemctl status log_time.timer
 
-![Screenshot Placeholder](./lecture_6/images/start_timer.png)
+![Screenshot Placeholder](./images/start_timer.png)
  
 sudo systemctl stop log_time.timer
 
-![Screenshot Placeholder](./lecture_6/images/stop_timer.png)
+![Screenshot Placeholder](./images/stop_timer.png)
 
 # Setup firewall
 
@@ -109,7 +113,7 @@ sudo iptables -A INPUT -p tcp --dport 22 -s 1.2.3.4 -j DROP
 sudo iptables -A INPUT -p tcp --dport 22 -s 5.6.7.8 -j ACCEPT
 sudo iptables-save | sudo tee /etc/iptables/rules.v4
 
-![Screenshot Placeholder](./lecture_6/images/iptable_create_rules.png)
+![Screenshot Placeholder](./images/iptable_create_rules.png)
 
 ## Setup Fail2Ban with universe
 
@@ -133,7 +137,7 @@ maxretry = 3
 sudo systemctl restart fail2ban
 sudo fail2ban-client status sshd
 
-![Screenshot Placeholder](./lecture_6/images/fairban.png)
+![Screenshot Placeholder](./images/fail2ban.png)
 
 
 # Create and mount new disk space 
@@ -141,18 +145,18 @@ sudo fail2ban-client status sshd
 ## Check disks 
 lsblk
 
-![Screenshot Placeholder](./lecture_6/images/disks.png)
+![Screenshot Placeholder](./images/disks.png)
 
 ## Add new disk to vm machine 
 
-![Screenshot Placeholder](./lecture_6/add_new_disk.png)
+![Screenshot Placeholder](./images/add_new_disk.png)
 
 ## Partition the disk 
 sudo fdisk /dev/vda
 n -> new space 
 p -> primary 
 
-![Screenshot Placeholder](./lecture_6/partition_disk.png)
+![Screenshot Placeholder](./images/partition_disk.png)
 
 ## Format the disk
 sudo mkfs.ext4 /dev/vda1
@@ -168,8 +172,8 @@ sudo blkid /dev/vda1
 
 sudo nano /etc/fstab
 
-![Screenshot Placeholder](./lecture_6/images/add_fstab.png)
+![Screenshot Placeholder](./images/add_fstab.png)
 
 sudo mount -a
 
-![Screenshot Placeholder](./lecture_6/images/show_new_disk_mounted.png)
+![Screenshot Placeholder](./images/show_new_disk_mounted.png)
