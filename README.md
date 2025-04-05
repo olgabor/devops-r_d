@@ -34,3 +34,16 @@ Created files under `~./Document`
 ### After VM Settings Update
 ![Screenshot Placeholder](./lecture_3/images/after_update.png)
 
+# Resize Disk Size 
+
+## Original size 
+
+![Screenshot Placeholder](./lecture_3/images/original_disk_space.png)
+
+UTM application -> Select VM → Click Settings -> Edit 
+Drives tab -> Find the disk you want to change (vda) and increase the size (Size) - enter a new value in the size field (20 GB). Click Save.
+
+### Check if disk size has been updated on VM
+lsblk 
+
+![Screenshot Placeholder](./lecture_3/images/updated_disk_size.png)
